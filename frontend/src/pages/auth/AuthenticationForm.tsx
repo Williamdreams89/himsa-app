@@ -1,5 +1,4 @@
 import { useToggle, upperFirst } from '@mantine/hooks';
-import { useForm } from '@mantine/form';
 import {
   TextInput,
   PasswordInput,
@@ -19,27 +18,29 @@ import { GoogleButton, TwitterButton } from './socialButtons/SocialButtons';
 import { IconArrowBack } from '@tabler/icons-react';
 import { Link } from 'react-router-dom';
 import LightDarkThemeBtn from '../../components/LightDarkThemeBtn';
+import { useLoginUserMutation } from '../../app/api/ApiSlice';
+import { useState } from 'react';
 
-const useStyles = createStyles(theme=>({}))
+const useStyles = createStyles(theme => ({}))
 
 
 export function AuthenticationForm(props: PaperProps) {
   const [type, toggle] = useToggle(['login', 'register']);
-  const form = useForm({
-    initialValues: {
-      email: '',
-      name: '',
-      password: '',
-      terms: true,
-    },
+  const { theme, classes } = useStyles()
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [email, setEmail] = useState('')
+  const [pwd, setPwd] = useState('')
 
-    validate: {
-      email: (val) => (/^\S+@\S+$/.test(val) ? null : 'Invalid email'),
-      password: (val) => (val.length <= 6 ? 'Password should include at least 6 characters' : null),
-    },
-  });
+  const handleLoginSubmit = async (event: any) => {
+    event.preventDefault()
 
-  const {theme, classes} = useStyles()
+  }
+
+  const handleRegisterSubmit = async (event: any) => {
+    event.preventDefault()
+
+  }
   return (
     <Container className=' w-[95vw] md:w-[60vw] lg:w-[35vw]' mt={'2rem'}>
       <div className=' flex justify-around mb-[3rem]'><Link to='/' className='flex'><IconArrowBack /><button>Back</button></Link><LightDarkThemeBtn /></div>
@@ -55,25 +56,35 @@ export function AuthenticationForm(props: PaperProps) {
 
         <Divider label="Or continue with email" labelPosition="center" my="lg" />
 
-        <form onSubmit={form.onSubmit(() => { })}>
+        <form onSubmit={type === 'login' ? handleLoginSubmit : handleRegisterSubmit}>
           <Stack>
-            {type === 'register' && (
+            {type === 'register' && (<>
+
               <TextInput
-                label="Name"
-                placeholder="Your name"
-                value={form.values.name}
-                onChange={(event) => form.setFieldValue('name', event.currentTarget.value)}
+                required
+                label="First Name"
+                placeholder="Your first name"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
                 radius="md"
               />
+              <TextInput
+                required
+                label="Last Name"
+                placeholder="Your last name"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+                radius="md"
+              />
+            </>
             )}
 
             <TextInput
               required
               label="Email"
               placeholder="hello@mantine.dev"
-              value={form.values.email}
-              onChange={(event) => form.setFieldValue('email', event.currentTarget.value)}
-              error={form.errors.email && 'Invalid email'}
+              value={email}
+              onChange={e => setEmail(e.target.value)}
               radius="md"
             />
 
@@ -81,17 +92,15 @@ export function AuthenticationForm(props: PaperProps) {
               required
               label="Password"
               placeholder="Your password"
-              value={form.values.password}
-              onChange={(event) => form.setFieldValue('password', event.currentTarget.value)}
-              error={form.errors.password && 'Password should include at least 6 characters'}
+              value={pwd}
+              onChange={e => setPwd(e.target.value)}
               radius="md"
             />
 
             {type === 'register' && (
               <Checkbox
                 label="I accept terms and conditions"
-                checked={form.values.terms}
-                onChange={(event) => form.setFieldValue('terms', event.currentTarget.checked)}
+                checked
               />
             )}
           </Stack>
@@ -108,8 +117,8 @@ export function AuthenticationForm(props: PaperProps) {
                 ? 'Already have an account? Login'
                 : "Don't have an account? Register"}
             </Anchor>
-            <Anchor color='dimmed' size='xs' href='/shop/account/requestPasswordReset'>{type === 'login'? 'Forgotten Password?': null}</Anchor >
-            <button type="submit" className=' p-3 rounded-lg text-white' style={{backgroundColor:theme.fn.primaryColor()}}>
+            <Anchor color='dimmed' size='xs' href='/shop/account/requestPasswordReset'>{type === 'login' ? 'Forgotten Password?' : null}</Anchor >
+            <button type="submit" className=' p-3 rounded-lg text-white' style={{ backgroundColor: theme.fn.primaryColor() }}>
               {upperFirst(type)}
             </button>
           </Group>
