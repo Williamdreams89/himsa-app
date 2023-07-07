@@ -1,0 +1,7 @@
+export const studentsExecutives = [
+    {name: "Mr. Benjamin Attakumah ", role:"President, HIMSA", imgSrc:"ben.webp", level:"400", description: "The department is a true powerhouse of expertise in Health Information Management. Their scholars are renowned for their groundbreaking research and deep under..."},
+    {name: "Mr. Camara Musah", role:"Vice President, HIMSA", imgSrc:"camara.webp",level:"300", description: "The competency framework developed by the department is a game-changer. It provides a comprehensive roadmap for professionals in Health Information Management, equipping them with the skills neede" },
+    {name: "Miss Benedicta Akuffo", role:"Financial Sec.,HIMSA", imgSrc:"bene.webp", level:"400", description: "The department's commitment to relevance and transformational learning is commendable. They are constantly adapting their curriculum to keep pace with the rapidly evolving healthcare landscape, ensuring ..."},
+    {name: "Mr. Andrews", role:"P.R.O, HIMSA", imgSrc:"unknown1.webp", level: "300", description: "Being part of the department's vibrant community is an enriching experience. The collaborative environment fosters innovative thinking and encourages the exchange of ideas, making it an ideal" },
+    // {name: "Dr. Nathaniel K. Mensah", role:"Lecturer, Academic Affairs, Head", imgSrc:"nathan.jpeg", level:""},
+]

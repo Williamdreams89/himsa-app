@@ -1,0 +1,16 @@
+# Himsa-app
+   - First time building for a challenge. Introducing the himsa-idea challenge. The web application provides seamless ways for the Health Information Management Student Association to automate specific tasks such as downloading resources, accessing announcements, and updating members on what's happening within the association.
+   - Frontend technologies include
+       - ReactJs
+       - Mantine component library
+       - Redux toolkit
+   - Backend technologies
+       - Django Web framework
+       - Django REST Framework
+       - Social Authentications
+       - Token-based authentication with JWT
+       - Docker PostgresDB image
+       - Github Actions
+   - Full Stack technologies
+       - Docker (in pipeline)
+       - Kubernetes Orchestration

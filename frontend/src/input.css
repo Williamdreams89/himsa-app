@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.landing-page{
+  overflow-x: hidden;
+}
+
+.App{
+    width: 100vw;
+    height: 100%;
+    font-family: 'Jost', sans-serif;
+    overflow-x: hidden;
+}
+
+html{
+    user-select: none;
+}
+
+::-webkit-scrollbar, ::-moz-scrollbar{
+    display: none !important;
+}
+
+
+
+
+.hero-heading{
+    position: relative;
+    height: 2rem;
+}
+
+
+
+/* Animated banner styles goes here! */
+.custom-arrow-thumb{
+    height: 220px;
+  }
+  .custom-arrow-thumb .user-arrow {
+    top: 50%;
+    margin-top: -40px;
+  }
+  .custom-arrow-thumb .user-arrow .img-wrapper {
+    width: 120px;
+    height: 80px;
+    float: left;
+    position: relative;
+  }
+  .custom-arrow-thumb .user-arrow .img-wrapper li {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+  }
+  .custom-arrow-thumb .user-arrow .arrow {
+    width: 20px;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.3);
+    position: relative;
+  }
+  .custom-arrow-thumb .user-arrow .arrow:before,
+  .custom-arrow-thumb .user-arrow .arrow:after {
+    width: 2px;
+    height: 15px;
+    background: #fff;
+    display: block;
+    content: ' ';
+    position: absolute;
+  }
+  .custom-arrow-thumb .user-arrow.next {
+    right: -120px;
+  }
+  .custom-arrow-thumb .user-arrow.next .arrow {
+    float: left;
+  }
+  .custom-arrow-thumb .user-arrow.next .arrow:before {
+    -webkit-transform: rotate(-40deg);
+            transform: rotate(-40deg);
+    top: 28px;
+    left: 10px;
+  }
+  .custom-arrow-thumb .user-arrow.next .arrow:after {
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg);
+    bottom: 27px;
+    left: 10px;
+  }
+  .custom-arrow-thumb .user-arrow.prev {
+    left: -120px;
+  }
+  .custom-arrow-thumb .user-arrow.prev .arrow {
+    float: right;
+  }
+  .custom-arrow-thumb .user-arrow.prev .arrow:before {
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg);
+    top: 28px;
+    left: 8px;
+  }
+  .custom-arrow-thumb .user-arrow.prev .arrow:after {
+    -webkit-transform: rotate(-40deg);
+            transform: rotate(-40deg);
+    bottom: 27px;
+    left: 8px;
+  }
+  .custom-arrow-thumb .user-thumb {
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.15);
+    height: 40px;
+  }
+  .custom-arrow-thumb .user-thumb > span {
+    width: 50px;
+    height: 30px;
+    margin: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    -webkit-transition: background .3s;
+            transition: background .3s;
+    background: transparent;
+  }
+  .custom-arrow-thumb .user-thumb > span.active {
+    background: rgba(255, 255, 255, 0.45);
+  }
+  .custom-arrow-thumb .user-thumb > span i {
+    display: block;
+    width: 46px;
+    height: 26px;
+    margin: 42px;
+    background-size: cover;
+    background-position: center;
+  }
+
+
+  /* Ant motion Banner */
+  .banner-user{
+    height: 370px;
+  }
+  .banner-user-elem{
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .banner-user-elem .banner-user-title{
+    font-size: 32px;
+    top: 40%;
+  }
+  .banner-user-elem .banner-user-text{
+    top: 40%;
+  }
+  .banner-anim-elem .bg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+
+
+.headerStyles{
+  background-color: transparent;
+  backdrop-filter: none;
+  position: fixed;
+  top: 0;
+  border-bottom: none;
+  z-index: 77;
+  width: 100%;
+}
+
+.headerStyles.active-dark{
+  background-color: black;
+  background-color: rgba(101, 233, 220, 0.99);
+}
+
+.headerStyles.active-light{
+  background-color: white;
+}
+ 
+.headerStyles.mode-dark{
+  background-color: black;
+
+}
+  
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+

@@ -1,0 +1,65 @@
+# Django project
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+media/
+
+# Virtual environment
+venv/
+env/
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*~
+
+# Python-specific files
+*.pyc
+*.pyo
+*.pyd
+*.pyi
+__pycache__/
+
+# Dependency directories
+env/
+venv/
+node_modules/
+
+# Ignore local settings file (if using separate local settings file)
+local_settings.py
+
+# Ignore sensitive information (credentials, API keys, etc.)
+secrets.json
+secrets.yaml
+
+# Ignore generated files
+*.pyc
+*.pyo
+*.orig
+*.swp
+*.lock
+*.bak
+*.tmp
+*.log
+
+# Ignore static files collected by Django
+staticfiles/
+
+# Ignore migration files (may vary depending on your setup)
+**/migrations/*.py
+**/migrations/*.pyc
+
+# Ignore compiled translations
+locale/
+
+# Ignore coverage reports
+.coverage
+htmlcov/
+
+# Ignore cache and session files
+__pycache__/
+*.cache
+*.session
