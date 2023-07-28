@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import BannerAnim, { Element } from 'rc-banner-anim';
 import 'rc-banner-anim/assets/index.css';
 
@@ -7,13 +7,14 @@ const BgElement = Element.BgElement;
 const AnimatedBanner = (props: any) => {
   return (
     <div>
-      <BannerAnim prefixCls="banner-user" autoPlay>
+      <BannerAnim prefixCls="banner-user" autoPlay style={{height: '80vh', backgroundAttachment: 'fixed'}}>
         <Element prefixCls="banner-user-elem" key="0">
           <BgElement
             key="bg"
             className="bg"
             style={{
               background: '#364D79',
+              height: '100%'
             }}
           />
           <div className="banner-user-title font-extrabold">HIMSA UCC</div>

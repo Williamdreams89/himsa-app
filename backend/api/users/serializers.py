@@ -37,3 +37,9 @@ class SetNewPasswordSerializer(serializers.ModelSerializer):
     class Meta: 
         model = get_user_model()
         fields = ['password']
+
+
+class VerifyEmailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = get_user_model()
+        fields = ['is_verified']

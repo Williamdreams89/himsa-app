@@ -47,11 +47,10 @@ const LandingAbout = () => {
     <div
       className="pt-5 pb-10"
       style={{
-        backgroundColor:
-          theme.colorScheme === "light" ? "rgb(241 245 249)" : "",
+        backgroundColor:theme.colorScheme === "light" ? "rgb(241 245 249)" : "",
       }}
     >
-      <div className="w-[90vw]   m-auto mt-[10vh]">
+      <div className="w-[90vw]  m-auto mt-[10vh]">
         <SimpleGrid
           cols={2}
           spacing="xl"

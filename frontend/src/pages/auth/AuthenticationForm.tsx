@@ -16,7 +16,7 @@ import {
 } from '@mantine/core';
 import { GoogleButton, TwitterButton } from './socialButtons/SocialButtons';
 import { IconArrowBack } from '@tabler/icons-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import LightDarkThemeBtn from '../../components/LightDarkThemeBtn';
 import { useLoginUserMutation } from '../../app/api/ApiSlice';
 import { useState } from 'react';
@@ -31,14 +31,28 @@ export function AuthenticationForm(props: PaperProps) {
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
   const [pwd, setPwd] = useState('')
+  const navigate = useNavigate()
 
+  const [loginUser, {isLoading, isSuccess, isError}] = useLoginUserMutation()
   const handleLoginSubmit = async (event: any) => {
     event.preventDefault()
+    if(email&&pwd){
+      await loginUser({email: email, password: pwd})
+      console.log('loginuser', loginUser)
+      navigate('/')
+    }
 
   }
 
   const handleRegisterSubmit = async (event: any) => {
     event.preventDefault()
+    if(firstName && lastName && email && pwd){
+      await loginUser({email:email, first_name:firstName, last_name:lastName})
+      navigate('/')
+      console.log('login user', loginUser)
+    }
+
+  
 
   }
   return (

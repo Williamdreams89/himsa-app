@@ -24,6 +24,7 @@ import LightDarkThemeBtn from './LightDarkThemeBtn';
 import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { mockdata_pages, mockdata_shop } from '../data/Navigator';
+import { FaUser, FaUserAlt } from 'react-icons/fa';
 
 const useStyles = createStyles((theme) => ({
   link: {
@@ -280,7 +281,7 @@ export function Navigator() {
 
           <Group className={classes.hiddenMobile}>
             {/* <IconBrandFacebook /> */}
-            <Link to='shop/account/authentication/'><button className={`font-bold ${theme.colorScheme=== 'dark' ? "text-white": "text-black"}`}>Login</button></Link>
+            <Link to='shop/account/authentication/'><button className={`font-bold ${theme.colorScheme=== 'dark' ? "text-white": "text-black"}`}><FaUserAlt color={theme.colorScheme === 'dark' ? 'white': 'black'} size={"1.5rem"} /></button></Link>
           </Group>
 
           <Burger opened={drawerOpened} onClick={toggleDrawer} className={classes.hiddenDesktop} color='white' />
